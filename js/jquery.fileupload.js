@@ -1144,11 +1144,8 @@
                 $.map(entries, function (entry) {
                     return that._handleFileTreeEntry(entry, path);
                 })
-            ).then(function () {
-                return Array.prototype.concat.apply(
-                    [],
-                    arguments
-                );
+            ).then(function (entries) {
+                return $.makeArray(entries);
             });
         },
 
